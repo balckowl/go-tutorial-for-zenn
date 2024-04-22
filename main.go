@@ -8,8 +8,23 @@ const (
 	PI = 3.14
 )
 
-func familyName(fname string, age int){
+func familyName(fname string, age int) {
 	fmt.Println(fname, age)
+}
+
+func myFunction(x int, y int) int {
+	return x + y
+}
+
+func myFunction2(x int, y int) (result int) {
+	result = x + y
+	return
+}
+
+func myFunction3(x int, y string) (result int, txt1 string) {
+	result = x + x
+	txt1 = y + "world"
+	return
 }
 
 func main() {
@@ -82,11 +97,25 @@ func main() {
 	}
 
 	fruits := [3]string{"apple", "banana", "orange"}
-	
 
-	for index, fruit := range fruits{
+	for index, fruit := range fruits {
 		fmt.Println(index, fruit)
 	}
 
 	familyName("Jany", 18)
+
+	fmt.Println(myFunction(1, 2))
+	fmt.Println(myFunction2(3, 5))
+
+	total := myFunction2(3, 4)
+	fmt.Println(total)
+
+	fmt.Println(myFunction3(10, "yes"))
+
+	colors := map[string]int{"red": 1, "bule": 2, "yellow": 3, "green": 4, "black": 5}
+	fmt.Println(colors)
+	colors["red"] = 3
+	fmt.Println(4)
+	delete(colors, "red")
+	fmt.Println(colors)
 }
